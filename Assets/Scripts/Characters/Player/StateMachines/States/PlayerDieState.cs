@@ -14,4 +14,12 @@ public class PlayerDieState : PlayerState
         stateMachine.Player.StateReusableData.MovementSpeedModifier = 0f;
         stateMachine.Player.Animator.CrossFade(AnimationData.DieParameterHash, AnimationData.TimeToDie);
     }
+
+    protected override void AddInputActionCallbacks()
+    {
+    }
+
+    protected override void RemoveInputActionCallbacks()
+    { 
+    }
 }

@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms.Impl;
 
 [RequireComponent(typeof(PlayerInputActions))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -11,6 +13,7 @@ public class Player : MonoBehaviour
     [field: Header("References:")]
     [field: SerializeField] public PlayerSO PlayerData { get; private set; }
     [field: SerializeField] public Animator Animator { get; private set; }
+    [field: SerializeField] public UnityEvent InitializeEvent { get; private set; }
     
     [field: Header("Settings:")]
     public PlayerInputActions Input { get; private set; }
@@ -22,6 +25,7 @@ public class Player : MonoBehaviour
     public int Dame { get; private set; }
 
     private PlayerStateMachine PlayerStateMachine;
+   
     private void Awake()
     {
         Input = GetComponent<PlayerInputActions>();
@@ -39,6 +43,8 @@ public class Player : MonoBehaviour
 
         Health = PlayerData.BaseHealth;
         Dame = PlayerData.AttackData.BaseDame;
+
+        InitializeEvent?.Invoke();
     }
 
     private void Start()
@@ -70,10 +76,16 @@ public class Player : MonoBehaviour
     public void GetDame(int value)
     {
         Health -= value;
+
+        UIManager.Instance.ChangeHealthBar.Invoke(Health);
+
         if(Health <= 0)
         {
             PlayerStateMachine.ChangeState(PlayerStateMachine.DieState);
+
+            GameManager.Instance.EndGameEvent?.Invoke();
         }
+
     }
 
     public void OnDrawGizmos()

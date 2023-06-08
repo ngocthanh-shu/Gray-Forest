@@ -48,8 +48,7 @@ public class PlayerAttackingState : PlayerState
             {
                 if (collider.CompareTag("Enemy"))
                 {
-                    ///Handle dame enemy with value 
-                    Debug.Log(stateMachine.Player.Dame);
+                    collider.GetComponent<Enemy>().getHit(stateMachine.Player.Dame);
                 }
             }
         }

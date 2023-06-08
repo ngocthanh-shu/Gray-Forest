@@ -94,7 +94,6 @@ public class PlayerState : IState
 
     protected float GetMovementSpeed()
     {
-        Debug.Log(stateMachine.Player.PlayerData.BaseSpeed);
         return stateMachine.Player.StateReusableData.MovementSpeedModifier * stateMachine.Player.PlayerData.BaseSpeed;
     }
 

@@ -9,14 +9,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - MapBounds
+  - Object
+  - Enemy
+  - EndPath
+  - Monster Check
   - 
   - 
   - 
