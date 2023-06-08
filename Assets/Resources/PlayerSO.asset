@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86a2090d86076f84fa925a69b6e2e611, type: 3}
+  m_Name: PlayerSO
+  m_EditorClassIdentifier: 
+  <BaseHealth>k__BackingField: 0
+  <BaseSpeed>k__BackingField: 5
+  <AttackData>k__BackingField:
+    <BaseDame>k__BackingField: 1
+    <Range>k__BackingField: 0.5
+    <Radius>k__BackingField: 0.5
+    <YOffset>k__BackingField: 0.51
+  <AnimationData>k__BackingField:
+    IdlingParameterName: Idling
+    MovingParameterName: Moving
+    AttackingParameterName: Attacking
+    DieParameterName: Die
+    DirectionXParameterName: DirectionX
+    DirectionYParameterName: DirectionY
+    <TimeToIdling>k__BackingField: 0.1
+    <TimeToMoving>k__BackingField: 0.1
+    <TimeToAttacking>k__BackingField: 0.1
+    <TimeToDie>k__BackingField: 0.1
+    <TimeToExitAttack>k__BackingField: 0.25
